@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finn | Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="terminal">
+    <h1>> <span id="typing"></span><span class="cursor">|</span></h1>
+    <p class="subtitle">Welcome to my developer portfolio.</p>
+    <div class="links">
+      <a href="#projects">[ Projects ]</a>
+      <a href="#skills">[ Skills ]</a>
+      <a href="#contact">[ Contact ]</a>
+    </div>
+  </div>
+
+  <section id="projects">
+    <h2>// Projects</h2>
+    <div class="project">
+      <h3>Roblox RP System</h3>
+      <p>Fully custom admin + pay system for roleplay servers. Includes leaderboard, job ranks, water systems, and dynamic GUI.</p>
+      <code>Tech: Lua, Roblox Studio, UI Design</code>
+    </div>
+    <div class="project">
+      <h3>NexiBot (Discord Bot)</h3>
+      <p>Multi-feature moderation and utility bot with slash commands, database logging, role controls, and ticket systems.</p>
+      <code>Tech: Node.js, Discord.js, Replit</code>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>// Skills</h2>
+    <ul>
+      <li>Lua (Roblox Studio)</li>
+      <li>JavaScript (Node.js, Discord.js)</li>
+      <li>HTML/CSS (GitHub Pages)</li>
+      <li>JSON Systems, Data Handling</li>
+      <li>UI/UX Design for RP Games</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>// Contact</h2>
+    <p>Discord: <strong>@FinnDev</strong></p>
+    <p>Email: <strong>yourname@example.com</strong></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+  </section>
+
+  <script>
+    const text = "Hi, I'm Finn. Dev for hire.";
+    let index = 0;
+    const typing = document.getElementById('typing');
+    function type() {
+      if (index < text.length) {
+        typing.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      }
+    }
+    window.onload = type;
+  </script>
+</body>
+</html>
