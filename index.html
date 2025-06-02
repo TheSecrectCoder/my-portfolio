@@ -2,19 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finn | Developer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TheLightingGuy | Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
+  <nav class="navbar">
+    <a href="index.html"><i class="fas fa-terminal"></i> Home</a>
+    <a href="projects.html"><i class="fas fa-code"></i> Projects</a>
+    <a href="skills.html"><i class="fas fa-tools"></i> Skills</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
   <div class="terminal">
-    <h1>> <span id="typing"></span><span class="cursor">|</span></h1>
-    <p class="subtitle">Welcome to my developer portfolio.</p>
+    <h1>
+      &gt; <span id="typing"></span><span class="cursor"></span>
+    </h1>
+    <p class="subtitle">Welcome to TheLightingGuy's developer portfolio.</p>
     <div class="links">
-      <a href="#projects">[ Projects ]</a>
-      <a href="#skills">[ Skills ]</a>
-      <a href="#contact">[ Contact ]</a>
+      <a href="projects.html">[ Projects ]</a>
+      <a href="skills.html">[ Skills ]</a>
+      <a href="contact.html">[ Contact ]</a>
     </div>
   </div>
 
@@ -22,12 +35,18 @@
     <h2>// Projects</h2>
     <div class="project">
       <h3>Roblox RP System</h3>
-      <p>Fully custom admin + pay system for roleplay servers. Includes leaderboard, job ranks, water systems, and dynamic GUI.</p>
+      <p>
+        Fully custom admin + pay system for roleplay servers. Includes leaderboard,
+        job ranks, water systems, and dynamic GUI.
+      </p>
       <code>Tech: Lua, Roblox Studio, UI Design</code>
     </div>
     <div class="project">
       <h3>NexiBot (Discord Bot)</h3>
-      <p>Multi-feature moderation and utility bot with slash commands, database logging, role controls, and ticket systems.</p>
+      <p>
+        Multi-feature moderation and utility bot with slash commands, database logging,
+        role controls, and ticket systems.
+      </p>
       <code>Tech: Node.js, Discord.js, Replit</code>
     </div>
   </section>
@@ -45,15 +64,18 @@
 
   <section id="contact">
     <h2>// Contact</h2>
-    <p>Discord: <strong>@FinnDev</strong></p>
+    <p>Discord: <strong>@TheLightingGuy</strong></p>
     <p>Email: <strong>yourname@example.com</strong></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+    <p>
+      GitHub:
+      <a href="https://github.com/yourusername" target="_blank">yourusername</a>
+    </p>
   </section>
 
   <script>
-    const text = "Hi, I'm Finn. Dev for hire.";
+    const text = "Hi, I'm TheLightingGuy. Dev for hire.";
     let index = 0;
-    const typing = document.getElementById('typing');
+    const typing = document.getElementById("typing");
     function type() {
       if (index < text.length) {
         typing.textContent += text.charAt(index);
