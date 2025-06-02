@@ -208,3 +208,8 @@ body.dark #toggle-theme:hover {
     gap: 0.8rem;
   }
 }
+
+nav ul li a.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
