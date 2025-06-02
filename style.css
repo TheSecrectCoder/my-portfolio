@@ -88,3 +88,21 @@
     a:hover {
       text-decoration: underline;
     }
+
+.navbar {
+  background-color: #161b22;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #30363d;
+}
+
+.navbar a {
+  color: #58a6ff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
