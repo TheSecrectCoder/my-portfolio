@@ -4,34 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TheLightingGuy | Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="container">
-    <div class="logo">TheLightingGuy</div>
-    <ul>
+  <nav>
+    <div class="nav-logo">TheLightingGuy</div>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="skills.html">Skills</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><button id="toggle-theme" aria-label="Toggle light and dark mode">Light Mode</button></li>
+      <li><button id="theme-toggle">🌓</button></li>
     </ul>
   </nav>
 
-  <main class="container">
-    <section id="projects">
+  <main>
+    <section>
       <h2>Projects</h2>
-      <div class="project">
-        <h3>Roblox RP System</h3>
-        <p>Fully custom admin + pay system for roleplay servers. Includes leaderboard, job ranks, water systems, and dynamic GUI.</p>
-        <code>Tech: Lua, Roblox Studio, UI Design</code>
-      </div>
-      <div class="project">
-        <h3>NexiBot (Discord Bot)</h3>
-        <p>Multi-feature moderation and utility bot with slash commands, database logging, role controls, and ticket systems.</p>
-        <code>Tech: Node.js, Discord.js, Replit</code>
-      </div>
+      <div id="projects-container"></div>
     </section>
   </main>
 
