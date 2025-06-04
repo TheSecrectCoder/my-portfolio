@@ -1,33 +1,29 @@
-const toggleBtn = document.getElementById('toggle-theme');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme toggle
+  const toggleBtn = document.getElementById("theme-toggle");
+  toggleBtn?.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  });
 
-// Load saved theme from localStorage or default to light
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
-  body.classList.add('dark');
-  toggleBtn.textContent = 'Dark Mode';
-} else {
-  toggleBtn.textContent = 'Light Mode';
-}
-
-toggleBtn.addEventListener('click', () => {
-  if (body.classList.contains('dark')) {
-    body.classList.remove('dark');
-    toggleBtn.textContent = 'Light Mode';
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.classList.add('dark');
-    toggleBtn.textContent = 'Dark Mode';
-    localStorage.setItem('theme', 'dark');
+  // Apply saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
   }
-});
 
-// Highlight active nav link
-const currentPage = window.location.pathname.split("/").pop();
-const navLinks = document.querySelectorAll('nav ul li a');
-
-navLinks.forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
-    link.classList.add('active');
+  // Load projects if on projects.html
+  if (window.location.pathname.includes("projects.html")) {
+    fetch("data/projects.json")
+      .then(res => res.json())
+      .then(projects => {
+        const container = document.getElementById("projects-container");
+        container.innerHTML = projects.map(p => `
+          <div class="project-card">
+            <h3>${p.title}</h3>
+            <p>${p.description}</p>
+            <small>${p.tech.join(", ")}</small>
+          </div>
+        `).join("");
+      });
   }
 });
