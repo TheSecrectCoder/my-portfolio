@@ -8,5 +8,10 @@
     "title": "NexiBot (Discord Bot)",
     "description": "Multi-feature moderation and utility bot with slash commands and database logging.",
     "tech": ["Node.js", "Discord.js", "Replit"]
+  },
+    {
+    "title": "Australian Roleplay Game | AURP",
+    "description": "A roblox game where we have intrigated many high level systems to make this one of the highest roleplay games.",
+    "tech": ["Lua", "Roblox Studio", "Discord Webhooks"]
   }
 ]
