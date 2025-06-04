@@ -1,1 +1,12 @@
-
+[
+  {
+    "title": "Roblox RP System",
+    "description": "Custom admin + pay system for RP servers. Includes leaderboard, job ranks, water systems.",
+    "tech": ["Lua", "Roblox Studio", "UI Design"]
+  },
+  {
+    "title": "NexiBot (Discord Bot)",
+    "description": "Multi-feature moderation and utility bot with slash commands and database logging.",
+    "tech": ["Node.js", "Discord.js", "Replit"]
+  }
+]
