@@ -27,3 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
+
+async function fetchLastCommit() {
+  const res = await fetch("https://api.github.com/repos/TheSecrectCoder/my-portfolio/commits");
+  const data = await res.json();
+  const lastDate = new Date(data[0].commit.committer.date);
+  document.getElementById("lastUpdated").textContent = lastDate.toDateString();
+}
+
+if (document.getElementById("lastUpdated")) {
+  fetchLastCommit();
+}
