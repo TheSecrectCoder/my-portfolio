@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Australian Roleplay Game | AURP",
+    "description": "A roleplay game based in Australia, featuring immersive environments and engaging gameplay.",
+    "image": "https://cdn.discordapp.com/attachments/1116337457428963338/1380887371561832528/9k.png?ex=68458315&is=68443195&hm=62bfb34b9a010d4310e0aa04f95df5f7ca36b7fae8f29e6d13a8c5892fa3abe9&",
+    "technologies": ["LUA", "Roblox Studio", "UI Design", "Discord API", "Discord Webhooks"],
+    "category": "Roblox",
+    "featured": true,
+    "demoUrl": "https://www.roblox.com/games/14765035125/Australian-Roleplay-ALPHA",
+    "codeUrl": "Unable to provide code URL as this is a Roblox game",
+    "infoUrl": "project-info/aurp.html"
+  },
+  {
+    "id": 2,
+    "title": "UK Roleplay Game",
+    "description": "A UK-based Roblox game with job ranks, pay systems, firefighting mechanics, admin tools, and realistic weather.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380893143913725993/9k.png?ex=68458875&is=684436f5&hm=f9668ff01b83569b6847f76f9e0fca6bb27b61381ab9c3558d271cdc10d9f26d&",
+    "technologies": ["LUA", "Roblox Studio", "Datastore", "ModuleScripts"],
+    "category": "Roblox",
+    "featured": true,
+    "demoUrl": "unavailable",
+    "codeUrl": "Unable to provide code URL as this is a Roblox game"
+  },
+  {
+    "id": 3,
+    "title": "National Highways Discord Bot",
+    "description": "Custom-built bot for managing staff, infractions, promotions, and shifts in a Roblox RP server using slash commands.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380893961308082288/2Q.png?ex=68458938&is=684437b8&hm=5561805fbcfe3ebc5668c598c0649736315d70400b89284cf5543cea4d037341&",
+    "technologies": ["Node.js", "Discord.js", "JSON", "Replit"],
+    "category": "Discord Bot",
+    "featured": true,
+    "demoUrl": "https://discord.gg/",
+    "codeUrl": "https://replit.com/@YourUser/NationalHighwaysBot"
+  },
+  {
+    "id": 4,
+    "title": "NexiBot",
+    "description": "A powerful and fun Discord bot with games, moderation, daily challenges, birthdays, and custom command support.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380894138077020220/2Q.png?ex=68458962&is=684437e2&hm=46ed524f43a2d448cad419428e9ac5d36268cdfcbbf7aa52fc931edb1439348e&",
+    "technologies": ["Node.js", "Discord.js", "JSON", "Replit"],
+    "category": "Discord Bot",
+    "featured": false,
+    "demoUrl": "https://discord.gg/",
+    "codeUrl": "https://replit.com/@YourUser/NexiBot"
+  },
+  {
+    "id": 5,
+    "title": "MyLife OS",
+    "description": "An all-in-one desktop app for managing life tasks including calendar, todos, notes, goals, budget, and habits.",
+    "image": "https://via.placeholder.com/600x400?text=MyLife+OS",
+    "technologies": ["JavaScript", "Electron", "Node.js", "JSON", "CLI"],
+    "category": "Desktop App",
+    "featured": true,
+    "demoUrl": "N/A",
+    "codeUrl": "Local development (not hosted publicly)"
+  },
+  {
+    "id": 6,
+    "title": "Developer Portfolio Website",
+    "description": "A sleek and modern personal portfolio built with HTML, CSS, and JS to showcase projects under the alias 'TheLightingGuy'.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380894844909781022/images.png?ex=68458a0a&is=6844388a&hm=f24e32e30732c68d6a0dc39e0c0b6133ffd4bdf62e7496e5a461adef8da88282&",
+    "technologies": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    "category": "Web",
+    "featured": true,
+    "demoUrl": "https://thelightingguy.github.io",
+    "codeUrl": "https://github.com/TheLightingGuy/portfolio"
+  },
+  {
+    "id": 7,
+    "title": "TriviaHub",
+    "description": "A JS-based quiz site with a user system and a sleek dashboard interface for taking quizzes and tracking progress.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380895483823788072/6Up6f38AAAAASUVORK5CYII.png?ex=68458aa3&is=68443923&hm=ea171e607504a394e9605c1bd8157e942c8c94c83868cb116bab688d484b4466&",
+    "technologies": ["HTML", "CSS", "JavaScript", "JSON", "PHP"],
+    "category": "Web",
+    "featured": false,
+    "demoUrl": "https://example.com/triviahub",
+    "codeUrl": "https://github.com/TheLightingGuy/TriviaHub"
+  },
+  {
+    "id": 7,
+    "title": "CodeCraft",
+    "description": "A JS-based quiz site with a user system and a sleek dashboard interface for learning how to code and tracking progress.",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380897564551020675/ChatGPT_Image_May_17_2025_12_21_51_PM.png?ex=68458c93&is=68443b13&hm=c902fcfdc1ed7a96f38e5fe66b4408f4f4164d8d153e5f31f46563a0b5884f93&",
+    "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
+    "category": "Web",
+    "featured": false,
+    "demoUrl": "https://example.com/triviahub",
+    "codeUrl": "unable to provide code due to copyright issues."
+  }
+]
+
