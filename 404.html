@@ -11,11 +11,17 @@
         // Store the path for display
         sessionStorage.setItem('notFoundPath', path);
         // Check if we're on a GitHub Pages 404 page
+// Check if we're on a GitHub Pages 404 page
         if (path !== '/404.html' && path !== '/404') {
-            // Fix relative paths by adding base URL
-            const baseUrl = window.location.origin + '/Portfolio';
+    // Get the repository name from the URL
+            const pathSegments = window.location.pathname.split('/');
+            const repoName = pathSegments[1]; // This will be your repository name
+    
+    // Fix relative paths by adding base URL with correct repository name
+            const baseUrl = window.location.origin + '/' + repoName;
             document.write('<base href="' + baseUrl + '/">');
         }
+
     </script>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
