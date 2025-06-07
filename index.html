@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLightingGuy | Home</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <a href="index.html">TheLightingGuy</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hi, I'm <span class="highlight">TheLightingGuy</span></h1>
+                    <p class="subtitle">Developer & Designer</p>
+                    <p class="description">I create modern, responsive websites and immersive Roblox experiences with a focus on lighting design and user experience.</p>
+                    <div class="cta-buttons">
+                        <a href="projects.html" class="btn primary">View Projects</a>
+                        <a href="contact.html" class="btn secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a passionate developer with expertise in creating modern web applications and immersive Roblox experiences. I focus on clean code, responsive design, and intuitive user interfaces.</p>
+                        <p>With a background in lighting design, I bring a unique perspective to development projects, combining technical expertise with creative problem-solving. My Lua programming skills allow me to create engaging interactive experiences in Roblox Studio.</p>
+                        <div class="expertise-areas">
+                            <div class="expertise-item">
+                                <i class="fas fa-code"></i>
+                                <h3>Web Development</h3>
+                                <p>Creating responsive, modern websites with clean code</p>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-gamepad"></i>
+                                <h3>Roblox Development</h3>
+                                <p>Building immersive games with Lua and Roblox Studio</p>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Lighting Design</h3>
+                                <p>Professional lighting solutions for various environments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div id="featured-projects-container" class="projects-grid">
+                    <!-- Projects will be loaded dynamically from projects.json -->
+                    <div class="loading">Loading projects...</div>
+                </div>
+                <div class="center-btn">
+                    <a href="projects.html" class="btn primary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Clients Say</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"TheLightingGuy created an amazing Roblox experience for our brand. The lighting effects and gameplay were beyond our expectations!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>John Smith</h4>
+                            <p>Marketing Director, GameCorp</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The website design was exactly what we needed - clean, professional, and with perfect lighting elements that showcase our products beautifully."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, Illuminate Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">TheLightingGuy</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/TheSecrectCoder" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.roblox.com/users/Finn040210/profile" target="_blank"><i class="fas fa-gamepad"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> TheLightingGuy</p>
+                <p id="version-info">Version: Loading...</p>
+                <p id="last-updated">Last Updated: Loading...</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
