@@ -11,17 +11,15 @@
         // Store the path for display
         sessionStorage.setItem('notFoundPath', path);
         // Check if we're on a GitHub Pages 404 page
-// Check if we're on a GitHub Pages 404 page
         if (path !== '/404.html' && path !== '/404') {
-    // Get the repository name from the URL
+            // Get the repository name from the URL
             const pathSegments = window.location.pathname.split('/');
             const repoName = pathSegments[1]; // This will be your repository name
-    
-    // Fix relative paths by adding base URL with correct repository name
+            
+            // Fix relative paths by adding base URL with correct repository name
             const baseUrl = window.location.origin + '/' + repoName;
             document.write('<base href="' + baseUrl + '/">');
         }
-
     </script>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
@@ -30,6 +28,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Fallback styles in case external CSS fails to load */
+        :root {
+            --accent: #4a89dc;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #333333;
+            --text-secondary: #6c757d;
+            --border: #e9ecef;
+        }
+        
+        body.dark-theme {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-primary: #f8f9fa;
+            --text-secondary: #adb5bd;
+            --accent: #64b5f6;
+            --border: #2d2d2d;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
         .error-container {
             max-width: 800px;
             margin: 0 auto;
@@ -39,6 +64,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
         
         .error-code {
@@ -48,6 +75,8 @@
             line-height: 1;
             position: relative;
             z-index: 1;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
         }
         
         .error-code-bg {
@@ -89,6 +118,27 @@
             margin: 10px 0 30px;
             color: var(--accent);
             border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .path-display::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid var(--accent);
+            border-radius: 6px;
+            animation: border-pulse 2s infinite;
+            opacity: 0;
+        }
+        
+        @keyframes border-pulse {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
         
         .code-animation {
@@ -133,6 +183,18 @@
             opacity: 0.8;
             border-radius: 4px;
             animation: float 3s infinite ease-in-out;
+        }
+        
+        .code-piece::after {
+            content: attr(data-symbol);
+            position: absolute;
+            color: white;
+            font-family: monospace;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.9rem;
         }
         
         .code-piece:nth-child(1) {
@@ -211,6 +273,26 @@
             margin-top: 40px;
         }
         
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
         .glitch-effect {
             position: relative;
         }
@@ -281,6 +363,52 @@
                 clip-path: inset(50% 0 50% 0);
             }
         }
+        
+        /* New interactive search light effect */
+        .search-light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                        rgba(100, 181, 246, 0.15) 0%, 
+                        rgba(0, 0, 0, 0) 60%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .error-container:hover .search-light {
+            opacity: 1;
+        }
+        
+        /* Particles background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .error-container > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Matrix rain effect */
+        #matrix-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.05;
+        }
     </style>
 </head>
 <body>
@@ -309,17 +437,20 @@
 
     <main>
         <section class="error-container">
+            <div id="particles-js"></div>
+            <canvas id="matrix-canvas"></canvas>
+            <div class="search-light"></div>
             <h1 class="error-code">
                 <span class="error-code-bg glitch-effect">404</span>
             </h1>
             <div class="broken-code">
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
-                <div class="code-piece"></div>
+                <div class="code-piece" data-symbol="<>"></div>
+                <div class="code-piece" data-symbol="{}"></div>
+                <div class="code-piece" data-symbol="//"></div>
+                <div class="code-piece" data-symbol="=="></div>
+                <div class="code-piece" data-symbol="!="></div>
+                <div class="code-piece" data-symbol="&&"></div>
+                <div class="code-piece" data-symbol="||"></div>
             </div>
             <h2 class="error-message">Page Not Found</h2>
             <p class="error-description">Oops! The page you're looking for seems to have disappeared into the void.</p>
@@ -352,12 +483,184 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
         // Display the path that wasn't found
         document.addEventListener('DOMContentLoaded', function() {
             const pathDisplay = document.getElementById('path-display');
             const notFoundPath = sessionStorage.getItem('notFoundPath') || window.location.pathname;
             pathDisplay.textContent = notFoundPath;
+            
+            // Search light effect
+            const errorContainer = document.querySelector('.error-container');
+            const searchLight = document.querySelector('.search-light');
+            
+            errorContainer.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                searchLight.style.setProperty('--x', x + '%');
+                searchLight.style.setProperty('--y', y + '%');
+            });
+            
+            // Random glitch effect on 404
+            const glitchElement = document.querySelector('.glitch-effect');
+            setInterval(() => {
+                glitchElement.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                setTimeout(() => {
+                    glitchElement.style.transform = 'translate(0, 0)';
+                }, 100);
+            }, 3000);
+            
+            // Initialize particles.js
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 40,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#4a89dc"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#4a89dc",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Initialize tilt effect on the 404 number
+            VanillaTilt.init(document.querySelector(".error-code"), {
+                max: 15,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.3
+            });
+            
+            // Typewriter effect removed
+            
+            // Matrix rain effect
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const nums = '0123456789';
+            const code = katakana + latin + nums;
+            
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+            
+            const rainDrops = [];
+            
+            for (let x = 0; x < columns; x++) {
+                rainDrops[x] = 1;
+            }
+            
+            const draw = () => {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#4a89dc';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < rainDrops.length; i++) {
+                    const text = code.charAt(Math.floor(Math.random() * code.length));
+                    ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                    
+                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        rainDrops[i] = 0;
+                    }
+                    rainDrops[i]++;
+                }
+            };
+            
+            setInterval(draw, 30);
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
         });
     </script>
 </body>
