@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLightingGuy | Dynamic Lighting System</title>
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-info-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .project-header {
+            margin-bottom: 40px;
+        }
+        .project-header img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        .project-section {
+            margin-bottom: 40px;
+        }
+        .project-section h2 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .project-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        .feature-list {
+            list-style: none;
+        }
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tech-tag {
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .back-btn {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <a href="../index.html">TheLightingGuy</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../skills.html">Skills</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-info-header">
+            <div class="container">
+                <h1>Australian Roleplay Game on Roblox</h1>
+                <p>An immersive Australian-based roleplay game featuring real-life locations, dynamic systems, and a vibrant community.</p>
+            </div>
+        </section>
+
+        <section class="project-info-container">
+            <div class="project-header">
+                <img src="https://cdn.discordapp.com/attachments/1116337457428963338/1380887371561832528/9k.png?ex=68458315&is=68443195&hm=62bfb34b9a010d4310e0aa04f95df5f7ca36b7fae8f29e6d13a8c5892fa3abe9&" alt="Dynamic Lighting System">
+                <div class="tech-tags">
+                    <span class="tech-tag">Lua</span>
+                    <span class="tech-tag">Roblox Studio</span>
+                    <span class="tech-tag">3D Modeling</span>
+                    <span class="tech-tag">Game Desgin</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Project Overview</h2>
+                <p>Australian Roleplay (AURP) is a detailed Roblox game set in Australia, built to provide a realistic and engaging roleplay experience. It features dynamic systems, real-life-inspired maps, interactive jobs, and fully functional services, all designed to simulate real-world operations.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    <li>Fully interactive Australian emergency services: Police, Fire & Rescue, and Ambulance</li>
+                    <li>Real-life Australian-style buildings, roads, and landmarks</li>
+                    <li>Dynamic weather system including storms, rain, and heatwaves</li>
+                    <li>Real-time day/night cycle synced across all players</li>
+                    <li>Custom firefighting system with realistic hoses, hydrants, and foam options</li>
+                    <li>Scripted economy with job-based payments and shift tracking</li>
+                    <li>Vehicle systems with working sirens, lights (ELS), and role-based access</li>
+                    <li>In-game moderation system for staff including commands like warn, kick, and bring</li>
+                    <li>Discord webhook integration for logs, infractions, and shift reporting</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Technical Implementation</h2>
+                <p>The game is scripted using Lua and built in Roblox Studio with custom module systems for pay, admin tools, and interactive jobs. Datastores are used to track ranks, progress, and payments. Lighting and weather are controlled by server scripts to ensure consistency across players.</p>
+                <p>All emergency services (police, fire & resque, and ambulances) have role-based systems that allow for seamless team switching, ELS controls, and access to custom UI tools. The firefighting system integrates live hose dragging, pressure control, and dynamic water simulation using surface GUIs and particle effects.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Results & Impact</h2>
+                <p>Although still in development, AURP has generated strong interest in the Roblox roleplay community. Testers have praised the interactive systems and realism. The internal moderation and admin tools have already streamlined management within test sessions.</p>
+                <p>With plans for expansion and public release, AURP aims to become one of the most authentic and community-driven Australian RP games on Roblox. Ongoing improvements and player feedback continue to shape the future of this experience.</p>
+            </div>
+
+            <div class="back-btn">
+                <a href="../projects.html" class="btn primary"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html">TheLightingGuy</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/TheSecrectCoder" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.roblox.com/users/Finn040210/profile" target="_blank"><i class="fas fa-gamepad"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> TheLightingGuy</p>
+                <p id="version-info">Version: Loading...</p>
+                <p id="last-updated">Last Updated: Loading...</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
