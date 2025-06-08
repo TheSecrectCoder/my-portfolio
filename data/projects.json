@@ -48,7 +48,7 @@
     "id": 5,
     "title": "MyLife OS",
     "description": "An all-in-one desktop app for managing life tasks including calendar, todos, notes, goals, budget, and habits.",
-    "image": "https://via.placeholder.com/600x400?text=MyLife+OS",
+    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1381293895983566959/ChatGPT_Image_Jun_8_2025_04_28_51_PM.png?ex=6846fdb0&is=6845ac30&hm=31a2bd753c8bec3ee9b91d3579da6793faa4d580d0799bdb8e3669f9fa81183f&",
     "technologies": ["JavaScript", "Electron", "Node.js", "JSON", "CLI"],
     "category": "Desktop App",
     "featured": true,
