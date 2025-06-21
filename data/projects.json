@@ -12,17 +12,6 @@
     "infoUrl": "project-info/aurp.html"
   },
   {
-    "id": 2,
-    "title": "UK Roleplay Game",
-    "description": "A UK-based Roblox game with job ranks, pay systems, firefighting mechanics, admin tools, and realistic weather.",
-    "image": "https://cdn.discordapp.com/attachments/1380893123437400128/1380893143913725993/9k.png?ex=68458875&is=684436f5&hm=f9668ff01b83569b6847f76f9e0fca6bb27b61381ab9c3558d271cdc10d9f26d&",
-    "technologies": ["LUA", "Roblox Studio", "Datastore", "ModuleScripts"],
-    "category": "Roblox",
-    "featured": true,
-    "demoUrl": "unavailable",
-    "codeUrl": "Unable to provide code URL as this is a Roblox game"
-  },
-  {
     "id": 3,
     "title": "National Highways Discord Bot",
     "description": "Custom-built bot for managing staff, infractions, promotions, and shifts in a Roblox RP server using slash commands.",
